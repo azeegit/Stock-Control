@@ -183,7 +183,7 @@ public class StockForm extends javax.swing.JFrame implements Observer, DisplayEl
         ASCStockItemInterface b = combinedStocks.get(selectedRow);
         b.buyStock(qtyToBuy);
         try {
-                b.updateCSV("src/data/MengdaStock.csv",b.getQtyInStock(),selectedRow-ascStockList.size(),4);
+                b.updateCSV("ICAelement2/src/data/MengdaStock.csv",b.getQtyInStock(),selectedRow-ascStockList.size(),4);
             } catch (IOException ex) {
                 Logger.getLogger(ASCStockItem.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -230,8 +230,8 @@ public class StockForm extends javax.swing.JFrame implements Observer, DisplayEl
             else{
             b.sellStock(qtyToSell); 
           try {
-                b.updateCSV("src/data/MengdaStock.csv",b.getQtyInStock(),selectedRow-ascStockList.size(),4);
-                b.writeCSV("src/data/SalesRecord.csv",LocalDateTime.now(),b.getProductCode(),b.getUnitPriceInPounds(),qtyToSell);
+                b.updateCSV("ICAelement2/src/data/MengdaStock.csv",b.getQtyInStock(),selectedRow-ascStockList.size(),4);
+                b.writeCSV("ICAelement2/src/data/SalesRecord.csv",LocalDateTime.now(),b.getProductCode(),b.getUnitPriceInPounds(),qtyToSell);
             } catch (IOException ex) {
                 Logger.getLogger(StockForm.class.getName()).log(Level.SEVERE, null, ex);
             }
